@@ -1,0 +1,9 @@
+pull_request_rules:
+  - name: Automatic merge when conditions are met
+    conditions:
+      - "#approved-reviews-by>=2"  # Number of required approved reviews
+      - "status-success=continuous-integration/travis-ci"  # Replace with your CI status check name
+      - "label!=work-in-progress"  # Ensure the PR is not marked as work-in-progress
+    actions:
+      merge:
+        method: merge  # Can be 'merge', 'rebase', or 'squash'
